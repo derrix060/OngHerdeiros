@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Heirs of the Future</string>
+    <string name="title_home">Home</string>
+    <string name="title_help">Patronize</string>
+    <string name="title_donate">Donate</string>
+    <string name="title_contact">Contact us</string>
+    <string name="title_events">Events</string>
+</resources>
