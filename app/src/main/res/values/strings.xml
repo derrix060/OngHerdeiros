@@ -1,8 +1,26 @@
 <resources>
     <string name="app_name">Heirs of the Future</string>
+
+    <!-- Menus -->
     <string name="title_home">Home</string>
     <string name="title_help">Patronize</string>
     <string name="title_donate">Donate</string>
-    <string name="title_contact">Contact us</string>
+    <string name="title_contact">Contact Us</string>
     <string name="title_events">Events</string>
+
+    <!-- Home -->
+    <string name="home_title">Who we are</string>
+    <string name="home_text1">Offering free social, psychological, pedagogical and legal assistance to users, with the purpose of assisting in the resumption or strengthening of family ties and protective powers possible from the breaking of the cycle of violence where the family was inserted.</string>
+    <string name="home_text2">The work developed is broad and seeks to impact beyond the child, also their relatives and aggressors. They began work in Santo Amaro (southern region of the city of São Paulo), offering 20 places to a shelter in the southern region. Immediately, it was observed that it would not be enough to attend only to the children or adolescents who arrived at the service, but also to their family as a whole, and, mainly, those in charge. Even though they were treated, the former continued within a violent and / or incestuous family dynamics, often reproducing (or reviving) a story first lived by those responsible. The cycle would only be interrupted with an integral attention to the whole family. According to the experience gained, the need to include a professional in the field of psychopedagogy in the functional framework was noticed, since the number of children and adolescents with cognitive impairment as a result of violence was significant.</string>
+    <string name="home_text3">The people we serve come to our units through referral of health equipment, forum, police stations, public defenders, schools, shelters, equipment and social assistance services (Child and Adolescent Centers, Youth Centers, Open Center, Specialized Reference Center for Social Assistance), among others. Some people and families come to us spontaneously for help as well.</string>
+    <string name="home_text4">The Board of Directors of Instituto Herdeiros do Futuro is 100% voluntary and the entity currently has 45 employees registered by the CLT regime working full time in its 5 units.</string>
+
+    <!-- Patronize -->
+
+    <!-- Donate -->
+
+    <!-- Contact Us -->
+
+    <!-- Events -->
+
 </resources>
