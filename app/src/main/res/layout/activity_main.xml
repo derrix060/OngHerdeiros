@@ -14,11 +14,16 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
+        <!--
         <fragment
+            android:name="com.example.mario.ongproject.MainFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/mainFragment"
-            ></fragment>
+            >
+
+        </fragment>
+        -->
 
     </FrameLayout>
 

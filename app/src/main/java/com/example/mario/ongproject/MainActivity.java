@@ -29,24 +29,26 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-
+            /*
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     fragmentTransaction.replace(R.id.mainFragment, homeFragment).commit();
                     return true;
                 case R.id.navigation_help:
-                    mTextMessage.setText(R.string.title_help);
+                    fragmentTransaction.replace(R.id.mainFragment, patronizeFragment).commit();
                     return true;
                 case R.id.navigation_donate:
-                    mTextMessage.setText(R.string.title_donate);
+                    fragmentTransaction.replace(R.id.mainFragment, donateFragment).commit();
                     return true;
                 case R.id.navigation_contact:
-                    mTextMessage.setText(R.string.title_contact);
+                    fragmentTransaction.replace(R.id.mainFragment, contactFragment).commit();
                     return true;
                 case R.id.navigation_events:
-                    mTextMessage.setText(R.string.title_events);
+                    fragmentTransaction.replace(R.id.mainFragment, eventsFragment).commit();
                     return true;
             }
+            */
+
             return false;
         }
 
@@ -55,9 +57,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        mTextMessage = (TextView) findViewById(R.id.message);
+        //setContentView(R.layout.activity_main);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
