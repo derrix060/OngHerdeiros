@@ -15,6 +15,7 @@
     <string name="home_text3">The people we serve come to our units through referral of health equipment, forum, police stations, public defenders, schools, shelters, equipment and social assistance services (Child and Adolescent Centers, Youth Centers, Open Center, Specialized Reference Center for Social Assistance), among others. Some people and families come to us spontaneously for help as well.</string>
     <string name="home_text4">The Board of Directors of Heirs of the Future Institute is 100% voluntary and the entity currently has 45 employees registered by the CLT regime working full time in its 5 units.</string>
 
+    <string name="home_video_descr">Video about Heirs of the Furute</string>
     <!-- Patronize -->
 
     <!-- Donate -->
@@ -26,5 +27,8 @@
     <string name="contact_message">Message</string>
 
     <!-- Events -->
+    <string name="events_available">Available Events</string>
+    <string name="events_first_event">05/20/2017 - Pizza Night</string>
+    <string name="events_seccond_event">05/22/2017 - Bingo Night</string>
 
 </resources>
