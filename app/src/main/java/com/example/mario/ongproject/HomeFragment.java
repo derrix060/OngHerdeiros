@@ -14,7 +14,6 @@ import android.webkit.WebViewClient;
  */
 
 public class HomeFragment extends Fragment {
-    WebView mWebView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -22,7 +21,7 @@ public class HomeFragment extends Fragment {
         View v = inflater.inflate(R.layout.home_view, container, false);
 
         // Play Video
-        mWebView = (WebView) v.findViewById(R.id.mWebView);
+        WebView mWebView = (WebView) v.findViewById(R.id.mWebView);
         mWebView.loadUrl("http://www.youtube.com/embed/" + "aEDto6fiTU8" + "?autoplay=1&vq=small");
 
         // Enable Javascript
