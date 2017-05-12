@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
 
                         case R.id.navigation_help:
-                            fragment = new PatronizeFragment();
+                            fragment = new DetachFragment();
                             break;
 
                         case R.id.navigation_donate:

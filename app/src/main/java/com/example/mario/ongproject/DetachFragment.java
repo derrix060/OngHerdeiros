@@ -10,13 +10,13 @@ import android.view.ViewGroup;
  * Created by mario on 05/05/17.
  */
 
-public class PatronizeFragment  extends Fragment {
+public class DetachFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.patronize_view, container, false);
+        View v = inflater.inflate(R.layout.detach_view, container, false);
 
 
         return v;

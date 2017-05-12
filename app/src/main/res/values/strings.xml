@@ -26,6 +26,8 @@
     <!-- Donate -->
 
     <!-- Detach -->
+    <string name="detach_title">What whe need?</string>
+
 
     <!-- Events -->
     <string name="events_available">Available Events</string>
