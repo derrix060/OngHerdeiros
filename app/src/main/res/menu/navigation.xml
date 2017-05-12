@@ -6,23 +6,25 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
 
+
     <item
-        android:id="@+id/navigation_help"
-        android:icon="@drawable/ic_favorite_black_24dp"
-        android:title="@string/title_help"
-        />
+        android:id="@+id/navigation_contact"
+        android:icon="@drawable/ic_group_black_24dp"
+        android:title="@string/title_contact" />
+
 
     <item
         android:id="@+id/navigation_donate"
-        android:icon="@drawable/ic_monetization_on_black_24dp"
+        android:icon="@drawable/ic_favorite_black_24dp"
         android:title="@string/title_donate"
         />
 
     <item
-        android:id="@+id/navigation_contact"
-        android:icon="@drawable/ic_email_black_24dp"
-        android:title="@string/title_contact"
-        />
+        android:id="@+id/navigation_help"
+        android:icon="@drawable/ic_loyalty_black_24dp"
+        android:title="@string/title_help" />
+
+
 
     <item
         android:id="@+id/navigation_events"
