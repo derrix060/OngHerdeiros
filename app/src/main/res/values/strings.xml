@@ -22,7 +22,7 @@
     <!-- Contact Us -->
     <string name="contact_name">Name</string>
     <string name="contact_email">Email</string>
-    <string name="contact_phone">Phone #</string>
+    <string name="contact_phone">Phone Number</string>
     <string name="contact_message">Message</string>
 
     <!-- Events -->

@@ -18,4 +18,6 @@ public class ContactFragment  extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.contact_view, container, false);
     }
+
+
 }
