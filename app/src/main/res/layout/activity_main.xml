@@ -8,15 +8,12 @@
     android:orientation="vertical"
     tools:context="com.example.mario.ongproject.MainActivity">
 
-    <fragment
-        android:name="com.example.mario.ongproject.HomeFragment"
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/main_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7"
-        android:id="@+id/mainFragment"
-        >
-
-    </fragment>
+        android:layout_weight="1"/>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
