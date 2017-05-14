@@ -4,12 +4,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical"
-        >
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -25,12 +19,12 @@
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <WebView
+            <VideoView
                 android:layout_width="match_parent"
-                android:layout_height="244dp"
-                android:id="@+id/mWebView">
-
-            </WebView>
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/videoHome"
+                />
 
             <TextView
                 android:id="@+id/txtHome1"
@@ -52,5 +46,4 @@
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
         </LinearLayout>
-    </ScrollView>
 </LinearLayout>
