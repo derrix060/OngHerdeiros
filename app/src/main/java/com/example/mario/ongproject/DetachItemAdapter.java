@@ -1,12 +1,16 @@
 package com.example.mario.ongproject;
 
+import android.content.res.Resources;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.net.URI;
 import java.util.List;
 
 /**
@@ -23,13 +27,13 @@ public class DetachItemAdapter extends RecyclerView.Adapter<DetachItemAdapter.It
     public static class ItemViewHolder extends RecyclerView.ViewHolder{
         CardView cv;
         TextView title;
-        //ImageView img;
+        ImageView img;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
 
             cv = (CardView)itemView.findViewById(R.id.detach_card);
-            //img = (ImageView)itemView.findViewById(R.id.detach_img_item);
+            img = (ImageView)itemView.findViewById(R.id.detach_img_item);
             title = (TextView)itemView.findViewById(R.id.title_card_text);
         }
     }
@@ -50,8 +54,8 @@ public class DetachItemAdapter extends RecyclerView.Adapter<DetachItemAdapter.It
 
     @Override
     public void onBindViewHolder(ItemViewHolder itemViewHolder, int position) {
-        //itemViewHolder.img.setImageResource(myItens.get(position).imageId);
         itemViewHolder.title.setText(myItens[position].title);
+        itemViewHolder.img.setImageResource(myItens[position].imagePath);
     }
 
     @Override

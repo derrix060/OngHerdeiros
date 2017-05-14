@@ -6,11 +6,11 @@ package com.example.mario.ongproject;
 
 public class DonateItem {
 
-    //public final int imageId;
+    public int imagePath;
     public final String title;
 
-    public DonateItem(int imageId, String title) {
-        //this.imageId = imageId;
+    public DonateItem(int imagePath, String title) {
+        this.imagePath = imagePath;
         this.title = title;
     }
 }

@@ -64,11 +64,11 @@ public class DetachFragment extends Fragment {
 
     private void initializeData(){
         myItens = new DonateItem[5];
+        myItens[0] = new DonateItem(R.drawable.car, getString(R.string.car));
+        myItens[1] = new DonateItem(R.drawable.camera, getString(R.string.camera));
+        myItens[2] = new DonateItem(R.drawable.computer, getString(R.string.computer));
+        myItens[3] = new DonateItem(R.drawable.refrigerator, getString(R.string.refrigerator));
+        myItens[4] = new DonateItem(R.drawable.microwaves, getString(R.string.microwaves));
 
-        myItens[0] = new DonateItem(1, "Carro");
-        myItens[1] = new DonateItem(2, "Geladeira");
-        myItens[2] = new DonateItem(3, "Fogão");
-        myItens[3] = new DonateItem(2, "Microondas");
-        myItens[4] = new DonateItem(3, "Computador");
     }
 }
