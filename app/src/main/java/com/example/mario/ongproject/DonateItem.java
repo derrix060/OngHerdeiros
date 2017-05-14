@@ -8,11 +8,9 @@ public class DonateItem {
 
     //public final int imageId;
     public final String title;
-    public final String description;
 
-    public DonateItem(int imageId, String title, String description) {
+    public DonateItem(int imageId, String title) {
         //this.imageId = imageId;
         this.title = title;
-        this.description = description;
     }
 }

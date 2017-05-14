@@ -18,16 +18,20 @@ import java.util.List;
 
 public class DetachFragment extends Fragment {
 
-    private List<DonateItem> myItens;
+    private DonateItem[] myItens;
 
     public DetachFragment(){
         // Required empty public constructor
     }
 
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Initialize itens
+        initializeData();
     }
 
 
@@ -44,16 +48,14 @@ public class DetachFragment extends Fragment {
         mRecyclerView.setHasFixedSize(true);
 
 
-        // Initialize itens
-        initializeData();
-
-        DetachItemAdapter adapter = new DetachItemAdapter(myItens);
-        mRecyclerView.setAdapter(adapter);
-
-
         // use a linear layout manager
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
+
+
+        // Custom adapter
+        DetachItemAdapter adapter = new DetachItemAdapter(myItens);
+        mRecyclerView.setAdapter(adapter);
 
 
         return v;
@@ -61,9 +63,12 @@ public class DetachFragment extends Fragment {
 
 
     private void initializeData(){
+        myItens = new DonateItem[5];
 
-        myItens.add(new DonateItem(1, "Title1", "Description1"));
-        myItens.add(new DonateItem(2, "Title2", "Description2"));
-        myItens.add(new DonateItem(3, "Title3", "Description3"));
+        myItens[0] = new DonateItem(1, "Carro");
+        myItens[1] = new DonateItem(2, "Geladeira");
+        myItens[2] = new DonateItem(3, "Fogão");
+        myItens[3] = new DonateItem(2, "Microondas");
+        myItens[4] = new DonateItem(3, "Computador");
     }
 }

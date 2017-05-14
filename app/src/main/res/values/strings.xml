@@ -34,4 +34,14 @@
     <string name="events_first_event">05/20/2017 - Pizza Night</string>
     <string name="events_seccond_event">05/22/2017 - Bingo Night</string>
 
+
+    <!-- General -->
+    <string name="donate">Donate</string>
+    <string name="share">Share</string>
+    <string name="car">Car</string>
+    <string name="camera">Camera</string>
+    <string name="computer">Computer</string>
+    <string name="refrigerator">Refrigerator</string>
+    <string name="microwaves">Microwaves</string>
+
 </resources>

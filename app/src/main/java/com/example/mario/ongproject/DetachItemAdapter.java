@@ -15,7 +15,7 @@ import java.util.List;
 
 public class DetachItemAdapter extends RecyclerView.Adapter<DetachItemAdapter.ItemViewHolder> {
 
-    private List<DonateItem> myItens;
+    private DonateItem[] myItens;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -23,7 +23,6 @@ public class DetachItemAdapter extends RecyclerView.Adapter<DetachItemAdapter.It
     public static class ItemViewHolder extends RecyclerView.ViewHolder{
         CardView cv;
         TextView title;
-        TextView description;
         //ImageView img;
 
         public ItemViewHolder(View itemView) {
@@ -32,12 +31,11 @@ public class DetachItemAdapter extends RecyclerView.Adapter<DetachItemAdapter.It
             cv = (CardView)itemView.findViewById(R.id.detach_card);
             //img = (ImageView)itemView.findViewById(R.id.detach_img_item);
             title = (TextView)itemView.findViewById(R.id.title_card_text);
-            description = (TextView)itemView.findViewById(R.id.descr_card_text);
         }
     }
 
     // Constructor
-    public DetachItemAdapter(List<DonateItem> myItens){
+    public DetachItemAdapter(DonateItem[] myItens){
         this.myItens = myItens;
     }
 
@@ -53,12 +51,11 @@ public class DetachItemAdapter extends RecyclerView.Adapter<DetachItemAdapter.It
     @Override
     public void onBindViewHolder(ItemViewHolder itemViewHolder, int position) {
         //itemViewHolder.img.setImageResource(myItens.get(position).imageId);
-        itemViewHolder.title.setText(myItens.get(position).title);
-        itemViewHolder.description.setText(myItens.get(position).description);
+        itemViewHolder.title.setText(myItens[position].title);
     }
 
     @Override
     public int getItemCount() {
-        return myItens.size();
+        return myItens.length;
     }
 }
