@@ -28,6 +28,8 @@
 
     <!-- Detach -->
     <string name="detach_title">What whe need?</string>
+    <string name="share_subtitle">Help Us</string>
+    <string name="share_message">Hello everyone. There is a NGO who help a need with %s. Could you help them? Thanks a lot.</string>
 
 
     <!-- Events -->
