@@ -1,13 +1,18 @@
 package com.example.mario.ongproject;
 
-import android.content.Intent;
+import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.TextView;
+
+import javax.mail.AuthenticationFailedException;
+import javax.mail.MessagingException;
 
 /**
  * Created by mario on 05/05/17.
@@ -15,6 +20,10 @@ import android.widget.Toast;
 
 public class ContactFragment  extends Fragment {
     FloatingActionButton sendFAB;
+    TextView email_to;
+    TextView name;
+    TextView phone_number;
+    TextView message;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -28,22 +37,71 @@ public class ContactFragment  extends Fragment {
                 sendMessage();
             }
         });
+
+        email_to = (TextView) v.findViewById(R.id.editTxtMail);
+        name = (TextView) v.findViewById(R.id.editTxtName);
+        phone_number = (TextView) v.findViewById(R.id.editTxtPhone);
+        message = (TextView) v.findViewById(R.id.editTxtMessage);
+
         // Inflate the layout for this fragment
         return v;
     }
 
-    public void sendMessage(){
-        Intent i = new Intent(Intent.ACTION_SEND);
-        i.setType("message/rfc822");
-        i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"recipient@example.com"});
-        i.putExtra(Intent.EXTRA_SUBJECT, "subject of email");
-        i.putExtra(Intent.EXTRA_TEXT   , "body of email");
-        try {
-            Toast.makeText(getActivity(), "Sending message.", Toast.LENGTH_SHORT).show();
-            startActivity(Intent.createChooser(i, "Send mail..."));
-        } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(getActivity(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
-        }
+    private String createMessage(){
+        String msg;
+
+        msg = "Esta mensagem foi criada autometicamente pelo aplicativo Android.\n";
+        msg += "\nNome: " +  name.getText().toString();
+        msg += "\nEmail: " + email_to.getText().toString();
+        msg += "\nTelefone: " + phone_number.getText().toString();
+        msg += "\n\n\nMensagem:\n" + message.getText().toString();
+
+        return msg;
     }
 
+    private void sendMessage() {
+        SendEmailAsyncTask email = new SendEmailAsyncTask();
+        email.activity = this;
+        email.m = new Mail();
+        email.m.setBody(createMessage());
+        email.execute();
+    }
+
+    protected void displayMessage(String message){
+        Snackbar.make(getView(), message, Snackbar.LENGTH_SHORT)
+                .setAction("Action", null).show();
+    }
+
+}
+
+class SendEmailAsyncTask extends AsyncTask<Void, Void, Boolean> {
+    Mail m;
+    ContactFragment activity;
+
+    public SendEmailAsyncTask() {}
+
+    @Override
+    protected Boolean doInBackground(Void... params) {
+        try {
+            if (m.send()) {
+                activity.displayMessage("Email sent.");
+            } else {
+                activity.displayMessage("Email failed to send.");
+            }
+
+            return true;
+        } catch (AuthenticationFailedException e) {
+            e.printStackTrace();
+            activity.displayMessage("Authentication failed.");
+            return false;
+        } catch (MessagingException e) {
+            e.printStackTrace();
+            activity.displayMessage("Email failed to send.");
+            return false;
+        } catch (Exception e) {
+            e.printStackTrace();
+            activity.displayMessage("Unexpected error occured.");
+            return false;
+        }
+    }
 }

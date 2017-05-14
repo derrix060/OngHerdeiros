@@ -22,6 +22,7 @@
     <string name="contact_name">Name</string>
     <string name="contact_phone">Phone Number</string>
     <string name="contact_message">Message</string>
+    <string name="contact_mail">Email</string>
 
     <!-- Donate -->
 

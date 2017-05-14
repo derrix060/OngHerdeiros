@@ -36,11 +36,18 @@
             android:inputType="textPersonName" />
 
         <EditText
+            android:id="@+id/editTxtMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/contact_mail"
+            android:inputType="textEmailAddress" />
+
+        <EditText
             android:id="@+id/editTxtPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/contact_phone"
-            android:inputType="textPersonName" />
+            android:inputType="phone" />
 
         <EditText
             android:id="@+id/editTxtMessage"
@@ -57,7 +64,7 @@
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
+        android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:clickable="true"
         app:fabSize="normal"
