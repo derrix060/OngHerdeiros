@@ -33,7 +33,7 @@
 
 
     <!-- Events -->
-    <string name="events_available">Available Events</string>
+    <string name="events_available">Upcoming Events</string>
     <string name="events_first_event">05/20/2017 - Pizza Night</string>
     <string name="events_seccond_event">05/22/2017 - Bingo Night</string>
 

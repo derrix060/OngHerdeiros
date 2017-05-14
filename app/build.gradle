@@ -32,4 +32,6 @@ dependencies {
 
     compile 'com.sun.mail:android-mail:1.5.5'
     compile 'com.sun.mail:android-activation:1.5.5'
+
+    compile 'com.roomorama:caldroid:3.0.1'
 }

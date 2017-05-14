@@ -12,10 +12,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical" >
-            <CalendarView
-                android:id="@+id/calendarView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
 
             <TextView
                 android:id="@+id/txt_events"
@@ -27,17 +23,11 @@
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <TextView
-                android:id="@+id/txt2"
+            <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/customCalendar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/events_first_event" />
-
-            <TextView
-                android:id="@+id/txt3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/events_seccond_event" />
+                />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
