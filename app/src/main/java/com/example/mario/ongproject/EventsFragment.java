@@ -20,7 +20,7 @@ import java.util.Date;
 
 public class EventsFragment extends Fragment {
 
-    CaldroidFragment caldroidFragment;
+    CaldroidFragment caldroidFragment; // Source: https://github.com/roomorama/Caldroid
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
