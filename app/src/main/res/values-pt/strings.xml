@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Herdeiros do Futuro</string>
+    <string name="calendar_descr">Calendario de eventos</string>
+    <string name="calendar_icon">Veja nossos eventos</string>
+    <string name="camera">Camera</string>
+    <string name="car">Carro</string>
+    <string name="computer">Computador</string>
+    <string name="contact_icon">Contato</string>
+    <string name="contact_mail">Email</string>
+    <string name="contact_message">Mensagem</string>
+    <string name="contact_name">Nome</string>
+    <string name="contact_phone">Numero de telefone</string>
+    <string name="contact_subtitle">Preencha o formulario para saber mais</string>
+    <string name="contact_title">Apadrinhe uma crianca</string>
+    <string name="detach_icon">Desapegue de algum item</string>
+    <string name="detach_title">O que precisamos</string>
+    <string name="donate">Doe</string>
+    <string name="donate_descr">site de doacao</string>
+    <string name="donate_icon">Doe para nos</string>
+    <string name="events_available">Proximos eventos</string>
+    <string name="events_first_event">20/05/2017 - Noite da pizza</string>
+    <string name="events_seccond_event">22/05/2017 - Noite do bingo</string>
+    <string name="home_cuidado">Eles precisam de nossa ajuda!</string>
+    <string name="home_icon"></string>
+    <string name="home_cuidado_sub">e nós temos o necessário para ajudá-los.</string>
+    <string name="home_title">Quem somos</string>
+    <string name="home_video_descr">Vídeo sobre os Herdeiros do Futuro</string>
+    <string name="image">imagem</string>
+    <string name="microwaves">Microondas</string>
+    <string name="refrigerator">Geladeira</string>
+    <string name="send_button_descr">Botão de envio</string>
+    <string name="share">Compartilhar</string>
+    <string name="share_message">Olá a todos. Existe uma ONG que precisa de ajuda com %s. Você poderia ajudá-los? Muito obrigado.</string>
+    <string name="share_subtitle">Ajude-nos</string>
+    <string name="title_contact">Apadrinhe</string>
+    <string name="title_donate">Doe</string>
+    <string name="title_events">Eventos</string>
+    <string name="title_help">Desapegue</string>
+    <string name="title_home">Inicio</string>
+</resources>
