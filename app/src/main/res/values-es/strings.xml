@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Herederos del futuro</string>
+    <string name="calendar_descr">Calendario de eventos</string>
+    <string name="camera">Cámara</string>
+    <string name="car">automóvil</string>
+    <string name="computer">computadora</string>
+    <string name="contact_mail">correo electrónico</string>
+    <string name="contact_message">mensaje</string>
+    <string name="contact_name">nombre</string>
+    <string name="contact_phone">número de teléfono</string>
+    <string name="contact_subtitle">Rellene el formulario para saber más sobre</string>
+    <string name="contact_title">Patronizar a un niño</string>
+    <string name="detach_title">Que necesita</string>
+    <string name="donate">Donar</string>
+    <string name="donate_descr">Donar sitio web</string>
+    <string name="events_available">Próximos Eventos</string>
+    <string name="events_first_event">20/05/2017 - Noche de Pizza</string>
+    <string name="events_seccond_event">22/05/2017 - Noche de Bingo</string>
+    <string name="home_cuidado">¡Necesitan nuestro cuidado!</string>
+    <string name="home_cuidado_sub">y tenemos herramientas adecuadas para ayudarles.</string>
+    <string name="home_title">Quienes somos</string>
+    <string name="home_video_descr">Video sobre los herederos del futuro</string>
+    <string name="image">imagen</string>
+    <string name="microwaves">Microondas</string>
+    <string name="refrigerator">Refrigerador</string>
+    <string name="send_button_descr">Botón de enviar.</string>
+    <string name="share">Compartir</string>
+    <string name="share_message">Hola a todos. Hay una ONG que necesita un% s. ¿Podrías ayudarlos? Muchas gracias.</string>
+    <string name="share_subtitle">Ayúdanos</string>
+    <string name="title_contact">Patrocinar</string>
+    <string name="title_donate">Donar</string>
+    <string name="title_events">Eventos</string>
+    <string name="title_help">Despegar</string>
+    <string name="title_home">Casa</string>
+</resources>
