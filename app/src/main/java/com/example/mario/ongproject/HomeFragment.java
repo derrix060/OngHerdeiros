@@ -6,9 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebChromeClient;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
@@ -24,10 +21,14 @@ public class HomeFragment extends Fragment {
         View v = inflater.inflate(R.layout.home_view, container, false);
 
         VideoView videoView = (VideoView) v.findViewById(R.id.videoHome);
+
+        // Get video URI
         videoView.setVideoURI(Uri.parse("android.resource://" + v.getContext().getPackageName() +"/"+R.raw.videoplayback
         ));
         videoView.setMediaController(new MediaController(getActivity()));
         videoView.requestFocus();
+
+        // Start video
         videoView.start();
 
         return v;
