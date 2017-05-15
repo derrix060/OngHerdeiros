@@ -11,9 +11,7 @@
     <!-- Home -->
     <string name="home_title">Who we are</string>
     <string name="home_cuidado">They need our care!</string>
-    <string name="home_cuidado_sub">and we have right tools to help.</string>
-
-    <string name="home_video_descr">Video about Heirs of the Furute</string>
+    <string name="home_cuidado_sub">and we have right tools to help them.</string>
 
 
     <!-- Patronize -->
@@ -27,9 +25,9 @@
     <!-- Donate -->
 
     <!-- Detach -->
-    <string name="detach_title">What whe need?</string>
+    <string name="detach_title">What whe need</string>
     <string name="share_subtitle">Help Us</string>
-    <string name="share_message">Hello everyone. There is a NGO who help a need with %s. Could you help them? Thanks a lot.</string>
+    <string name="share_message">Hello everyone. There is a NGO who need a %s. Could you help them? Thanks a lot.</string>
 
 
     <!-- Events -->
@@ -47,4 +45,20 @@
     <string name="refrigerator">Refrigerator</string>
     <string name="microwaves">Microwaves</string>
 
+
+    <!-- Talkback -->
+    <string name="image">image</string>
+    <string name="send_button_descr">Send button.</string>
+    <string name="calendar_descr">Events Calendar</string>
+    <string name="donate_descr">Donate website</string>
+    <string name="home_video_descr">Video about Heirs of the Future</string>
+
+    <!-- unused ->
+    <string name="home_icon">Go to homepage</string>
+    <string name="contact_icon">Contact us</string>
+    <string name="donate_icon">Donate us</string>
+    <string name="detach_icon">Detach some item</string>
+    <string name="calendar_icon">See our events</string>
+    <!- -->
 </resources>
+

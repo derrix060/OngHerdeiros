@@ -35,7 +35,6 @@ public class EventsFragment extends Fragment {
         args.putInt(CaldroidFragment.MONTH, cal.get(Calendar.MONTH) + 1);
         args.putInt(CaldroidFragment.YEAR, cal.get(Calendar.YEAR));
         caldroidFragment.setArguments(args);
-
         FragmentTransaction t = getFragmentManager().beginTransaction();
         t.replace(R.id.customCalendar, caldroidFragment);
         t.commit();

@@ -67,7 +67,8 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:clickable="true"
+        android:contentDescription="@string/send_button_descr"
+        app:elevation="4dp"
         app:fabSize="normal"
-        app:srcCompat="@android:drawable/ic_menu_send"
-        app:elevation="4dp"/>
+        app:srcCompat="@android:drawable/ic_menu_send" />
 </android.support.design.widget.CoordinatorLayout>

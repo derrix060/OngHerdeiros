@@ -1,8 +1,6 @@
 package com.example.mario.ongproject;
 
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -12,9 +10,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.net.URI;
-import java.util.List;
 
 import static android.support.v4.content.ContextCompat.startActivity;
 
@@ -43,10 +38,13 @@ public class DetachItemAdapter extends RecyclerView.Adapter<DetachItemAdapter.It
             title = (TextView)itemView.findViewById(R.id.title_card_text);
             btnDonate = (Button) itemView.findViewById(R.id.detach_button_share);
 
+            // Set description when talkback is activated
+            img.setContentDescription(title.getText().toString() + R.string.image);
+
             btnDonate.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String shareBody = v.getResources().getString(R.string.share_message);
+                    String shareBody = String.format(v.getResources().getString(R.string.share_message), title.getText().toString());
                     String sub = v.getResources().getString(R.string.share_subtitle);
 
                     Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);

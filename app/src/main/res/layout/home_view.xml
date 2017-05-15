@@ -20,11 +20,11 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <VideoView
+                android:id="@+id/videoHome"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:id="@+id/videoHome"
-                />
+                android:contentDescription="@string/home_video_descr" />
 
             <TextView
                 android:id="@+id/txtHome1"
