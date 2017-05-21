@@ -59,6 +59,8 @@ public class DonateFragment  extends Fragment {
 
             }
         });
+
+
         return v;
     }
 
@@ -71,6 +73,21 @@ public class DonateFragment  extends Fragment {
     private void changeSeekBarValue(Integer newValue){
         valueDonate.setText(donateCurrency + newValue.toString());
 
-        
+        if (newValue < 20){
+            imgDonate.setImageResource(R.drawable.child_0);
+        }
+        else if(newValue < 40){
+            imgDonate.setImageResource(R.drawable.child_1);
+        }
+        else if(newValue < 60){
+            imgDonate.setImageResource(R.drawable.child_2);
+        }
+        else if(newValue < 80){
+            imgDonate.setImageResource(R.drawable.child_3);
+        }
+        else{
+            imgDonate.setImageResource(R.drawable.child_4);
+        }
+
     }
 }

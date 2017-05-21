@@ -23,7 +23,7 @@
     <string name="contact_mail">Email</string>
 
     <!-- Donate -->
-    <string name="currency">\"$\"</string>
+    <string name="currency">$</string>
     <string name="donate_title">BE A DREAM MAKER</string>
     <string name="donate_subtitle">Help our children with some donation.</string>
 

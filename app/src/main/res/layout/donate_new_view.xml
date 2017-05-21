@@ -4,6 +4,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/activity_vertical_margin"
+    android:background="@color/colorDonateBackground"
     >
 
     <TextView
@@ -28,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        app:srcCompat="@drawable/child_0" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,12 +40,12 @@
 
         <SeekBar
             android:id="@+id/seekDonate"
-            style="@style/Widget.AppCompat.SeekBar.Discrete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/Base.Widget.AppCompat.SeekBar"
             android:layout_weight="1"
             android:max="100"
-            android:progress="20" />
+            android:progress="50" />
 
         <TextView
             android:id="@+id/txtDonateValue"
