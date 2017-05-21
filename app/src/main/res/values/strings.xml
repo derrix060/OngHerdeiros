@@ -23,6 +23,9 @@
     <string name="contact_mail">Email</string>
 
     <!-- Donate -->
+    <string name="currency">\"$\"</string>
+    <string name="donate_title">BE A DREAM MAKER</string>
+    <string name="donate_subtitle">Help our children with some donation.</string>
 
     <!-- Detach -->
     <string name="detach_title">What whe need</string>
@@ -52,13 +55,7 @@
     <string name="calendar_descr">Events Calendar</string>
     <string name="donate_descr">Donate website</string>
     <string name="home_video_descr">Video about Heirs of the Future</string>
+    <string name="home_icon"></string>
 
-    <!-- unused ->
-    <string name="home_icon">Go to homepage</string>
-    <string name="contact_icon">Contact us</string>
-    <string name="donate_icon">Donate us</string>
-    <string name="detach_icon">Detach some item</string>
-    <string name="calendar_icon">See our events</string>
-    <!- -->
 </resources>
 

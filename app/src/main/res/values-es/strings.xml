@@ -33,4 +33,7 @@
     <string name="title_events">Eventos</string>
     <string name="title_help">Despegar</string>
     <string name="title_home">Casa</string>
+    <string name="currency">€</string>
+    <string name="donate_title">SÉ UN FABRICANTE DE SUEÑOS</string>
+    <string name="donate_subtitle">Ayude a nuestros hijos con alguna donación.</string>
 </resources>
