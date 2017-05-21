@@ -3,6 +3,7 @@ package com.example.mario.ongproject;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.roomorama.caldroid.CaldroidFragment;
+import com.roomorama.caldroid.CaldroidListener;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -35,6 +37,15 @@ public class EventsFragment extends Fragment {
         args.putInt(CaldroidFragment.MONTH, cal.get(Calendar.MONTH) + 1);
         args.putInt(CaldroidFragment.YEAR, cal.get(Calendar.YEAR));
         caldroidFragment.setArguments(args);
+        final CaldroidListener listener = new CaldroidListener(){
+            @Override
+            public void onSelectDate(Date date, View view) {
+                Snackbar.make(view, date.toString(), Snackbar.LENGTH_SHORT).show();
+            }
+
+        };
+        caldroidFragment.setCaldroidListener(listener);
+
         FragmentTransaction t = getFragmentManager().beginTransaction();
         t.replace(R.id.customCalendar, caldroidFragment);
         t.commit();
