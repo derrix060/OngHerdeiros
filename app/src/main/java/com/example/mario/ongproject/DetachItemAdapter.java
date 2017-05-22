@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import static android.support.v4.content.ContextCompat.startActivity;
 
 /**
@@ -19,7 +21,7 @@ import static android.support.v4.content.ContextCompat.startActivity;
 
 public class DetachItemAdapter extends RecyclerView.Adapter<DetachItemAdapter.ItemViewHolder> {
 
-    private DonateItem[] myItens;
+    private ArrayList<DonateItem> myItens;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -59,7 +61,7 @@ public class DetachItemAdapter extends RecyclerView.Adapter<DetachItemAdapter.It
     }
 
     // Constructor
-    public DetachItemAdapter(DonateItem[] myItens){
+    public DetachItemAdapter(ArrayList<DonateItem> myItens){
         this.myItens = myItens;
     }
 
@@ -74,12 +76,13 @@ public class DetachItemAdapter extends RecyclerView.Adapter<DetachItemAdapter.It
 
     @Override
     public void onBindViewHolder(ItemViewHolder itemViewHolder, int position) {
-        itemViewHolder.title.setText(myItens[position].title);
-        itemViewHolder.img.setImageResource(myItens[position].imagePath);
+        DonateItem item = myItens.get(position);
+        itemViewHolder.title.setText(item.title);
+        itemViewHolder.img.setImageResource(item.imagePath);
     }
 
     @Override
     public int getItemCount() {
-        return myItens.length;
+        return myItens.size();
     }
 }
