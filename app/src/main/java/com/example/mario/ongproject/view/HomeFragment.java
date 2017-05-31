@@ -1,4 +1,4 @@
-package com.example.mario.ongproject;
+package com.example.mario.ongproject.view;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.MediaController;
 import android.widget.VideoView;
+
+import com.example.mario.ongproject.R;
 
 /**
  * Created by mario on 05/05/17.

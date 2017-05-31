@@ -1,4 +1,4 @@
-package com.example.mario.ongproject;
+package com.example.mario.ongproject.view;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -9,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.mario.ongproject.model.Mail;
+import com.example.mario.ongproject.R;
 
 import javax.mail.AuthenticationFailedException;
 import javax.mail.MessagingException;

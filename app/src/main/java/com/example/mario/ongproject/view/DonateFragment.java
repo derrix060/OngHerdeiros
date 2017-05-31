@@ -1,4 +1,4 @@
-package com.example.mario.ongproject;
+package com.example.mario.ongproject.view;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import com.example.mario.ongproject.R;
 
 /**
  * Created by mario on 05/05/17.

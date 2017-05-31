@@ -1,4 +1,4 @@
-package com.example.mario.ongproject;
+package com.example.mario.ongproject.view;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.mario.ongproject.R;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
 

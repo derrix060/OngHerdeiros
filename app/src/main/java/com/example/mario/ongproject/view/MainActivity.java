@@ -1,4 +1,4 @@
-package com.example.mario.ongproject;
+package com.example.mario.ongproject.view;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,6 +8,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+
+import com.example.mario.ongproject.R;
 
 public class MainActivity extends AppCompatActivity {
 

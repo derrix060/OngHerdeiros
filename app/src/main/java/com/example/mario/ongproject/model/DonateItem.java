@@ -1,4 +1,4 @@
-package com.example.mario.ongproject;
+package com.example.mario.ongproject.model;
 
 /**
  * Created by mario on 13/05/2017.

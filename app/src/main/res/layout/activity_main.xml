@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.mario.ongproject.MainActivity">
+    tools:context="com.example.mario.ongproject.view.MainActivity">
 
 
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"

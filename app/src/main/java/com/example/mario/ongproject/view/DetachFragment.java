@@ -1,4 +1,4 @@
-package com.example.mario.ongproject;
+package com.example.mario.ongproject.view;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,6 +7,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.mario.ongproject.controller.DetachItemAdapter;
+import com.example.mario.ongproject.model.DonateItem;
+import com.example.mario.ongproject.R;
 
 import java.util.ArrayList;
 

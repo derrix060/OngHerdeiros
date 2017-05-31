@@ -1,4 +1,4 @@
-package com.example.mario.ongproject;
+package com.example.mario.ongproject.model;
 
 import java.util.Date;
 import java.util.Properties;
