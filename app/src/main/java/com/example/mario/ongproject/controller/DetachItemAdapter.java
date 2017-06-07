@@ -1,6 +1,7 @@
 package com.example.mario.ongproject.controller;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -24,7 +25,7 @@ import static android.support.v4.content.ContextCompat.startActivity;
 
 public class DetachItemAdapter extends RecyclerView.Adapter<DetachItemAdapter.ItemViewHolder> {
 
-    private ArrayList<DonateItem> myItens;
+    private ArrayList<DonateItem> myItems;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -33,6 +34,7 @@ public class DetachItemAdapter extends RecyclerView.Adapter<DetachItemAdapter.It
         CardView cv;
         TextView title;
         ImageView img;
+        Button btnShare;
         Button btnDonate;
 
         public ItemViewHolder(final View itemView) {
@@ -41,12 +43,13 @@ public class DetachItemAdapter extends RecyclerView.Adapter<DetachItemAdapter.It
             cv = (CardView)itemView.findViewById(R.id.detach_card);
             img = (ImageView)itemView.findViewById(R.id.detach_img_item);
             title = (TextView)itemView.findViewById(R.id.title_card_text);
-            btnDonate = (Button) itemView.findViewById(R.id.detach_button_share);
+            btnShare = (Button) itemView.findViewById(R.id.detach_button_share);
+            btnDonate = (Button) itemView.findViewById(R.id.detach_button_donate);
 
             // Set description when talkback is activated
             img.setContentDescription(title.getText().toString() + R.string.image);
 
-            btnDonate.setOnClickListener(new View.OnClickListener() {
+            btnShare.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     String shareBody = String.format(v.getResources().getString(R.string.share_message), title.getText().toString());
@@ -60,12 +63,21 @@ public class DetachItemAdapter extends RecyclerView.Adapter<DetachItemAdapter.It
                     startActivity(v.getContext(), sharingIntent, new Bundle());
                 }
             });
+
+            btnDonate.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent donateIntent = new Intent(Intent.ACTION_VIEW);
+                    donateIntent.setData(Uri.parse("http://www.herdeirosdofuturo.org.br/fa%C3%A7a-sua-doa%C3%A7%C3%A3o.html"));
+                    startActivity(v.getContext(), donateIntent, new Bundle());
+                }
+            });
         }
     }
 
     // Constructor
-    public DetachItemAdapter(ArrayList<DonateItem> myItens){
-        this.myItens = myItens;
+    public DetachItemAdapter(ArrayList<DonateItem> myItems){
+        this.myItems = myItems;
     }
 
     @Override
@@ -79,13 +91,13 @@ public class DetachItemAdapter extends RecyclerView.Adapter<DetachItemAdapter.It
 
     @Override
     public void onBindViewHolder(ItemViewHolder itemViewHolder, int position) {
-        DonateItem item = myItens.get(position);
+        DonateItem item = myItems.get(position);
         itemViewHolder.title.setText(item.title);
         itemViewHolder.img.setImageResource(item.imagePath);
     }
 
     @Override
     public int getItemCount() {
-        return myItens.size();
+        return myItems.size();
     }
 }
