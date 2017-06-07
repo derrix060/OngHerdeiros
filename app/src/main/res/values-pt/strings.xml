@@ -36,4 +36,6 @@
     <string name="currency">R$</string>
     <string name="donate_title">SEJA UM REALIZADOR DE SONHOS</string>
     <string name="donate_subtitle">Ajude nossas crianças com alguma doação.</string>
+    <string name="connect_error">Erro de Conexão!</string>
+    <string name="read_error">Erro de leitura!</string>
 </resources>

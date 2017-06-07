@@ -36,4 +36,6 @@
     <string name="currency">€</string>
     <string name="donate_title">SÉ UN FABRICANTE DE SUEÑOS</string>
     <string name="donate_subtitle">Ayude a nuestros hijos con alguna donación.</string>
+    <string name="connect_error">!Error de conexión!</string>
+    <string name="read_error">¡Error de lectura!</string>
 </resources>

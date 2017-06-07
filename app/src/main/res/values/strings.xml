@@ -56,5 +56,11 @@
     <string name="donate_descr">Donate website</string>
     <string name="home_video_descr">Video about Heirs of the Future</string>
 
+
+    <!-- Errors -->
+    <string name="read_error">Read error!</string>
+    <string name="connect_error">Connection error!</string>
+    <string name="no_detach_items">Sorry, there are no items wanted!</string>
+
 </resources>
 
