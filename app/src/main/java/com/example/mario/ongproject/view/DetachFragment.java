@@ -94,11 +94,13 @@ public class DetachFragment extends Fragment {
                         while ((line = reader.readLine()) != null) {
                             builder.append(line);
                         }
+                        return convertJSONToArrayList(new JSONObject(builder.toString()));
                     } catch (IOException e) {
                         Snackbar.make(getView(), getString(R.string.read_error), Snackbar.LENGTH_LONG).show();
                         e.printStackTrace();
+                    } catch (Exception e){
+                        Log.d(TAG, "doInBackground: Exception-> " + e.toString());
                     }
-                    return convertJSONToArrayList(new JSONObject(builder.toString()));
                 }
             } catch (Exception e) {
                 Snackbar.make(getView(), getString(R.string.connect_error), Snackbar.LENGTH_LONG).show();
