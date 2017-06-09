@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/fragment_home"
+<LinearLayout android:id="@+id/fragment_home"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
         <LinearLayout
+            android:id="@+id/root_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical" >
@@ -19,12 +20,29 @@
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <VideoView
-                android:id="@+id/videoHome"
+
+            <FrameLayout
+                android:id="@+id/video_layout"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:contentDescription="@string/home_video_descr" />
+                android:background="@android:color/black">
+
+                <com.universalvideoview.UniversalVideoView
+                    android:id="@+id/videoView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    app:uvv_autoRotation="true"
+                    app:uvv_fitXY="false" />
+
+                <com.universalvideoview.UniversalMediaController
+                    android:id="@+id/media_controller"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    app:uvv_scalable="true" />
+
+            </FrameLayout>
 
             <TextView
                 android:id="@+id/txtHome1"
