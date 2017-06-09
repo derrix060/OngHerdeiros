@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.mario.ongproject.model.Mail;
@@ -26,6 +27,7 @@ public class ContactFragment  extends Fragment {
     TextView name;
     TextView phone_number;
     TextView message;
+    ProgressBar progressBar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,6 +46,8 @@ public class ContactFragment  extends Fragment {
         name = (TextView) v.findViewById(R.id.editTxtName);
         phone_number = (TextView) v.findViewById(R.id.editTxtPhone);
         message = (TextView) v.findViewById(R.id.editTxtMessage);
+        // progressBar = (ProgressBar) v.findViewById(R.id.progress_bar_contact);
+        // progressBar.setVisibility(View.INVISIBLE);
 
         // Inflate the layout for this fragment
         return v;
@@ -51,6 +55,7 @@ public class ContactFragment  extends Fragment {
 
     private String createMessage(){
         String msg;
+        // progressBar.setVisibility(View.VISIBLE);
 
         msg = "Esta mensagem foi criada autometicamente pelo aplicativo Android.\n";
         msg += "\nNome: " +  name.getText().toString();
@@ -62,6 +67,7 @@ public class ContactFragment  extends Fragment {
     }
 
     private void sendMessage() {
+
         SendEmailAsyncTask email = new SendEmailAsyncTask();
         email.activity = this;
         email.m = new Mail();
@@ -70,6 +76,7 @@ public class ContactFragment  extends Fragment {
     }
 
     protected void displayMessage(String message){
+        // progressBar.setVisibility(View.GONE);
         Snackbar.make(getView(), message, Snackbar.LENGTH_SHORT)
                 .setAction("Action", null).show();
     }

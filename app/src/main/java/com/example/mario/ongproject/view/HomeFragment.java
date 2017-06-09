@@ -35,6 +35,7 @@ public class HomeFragment extends Fragment {
 
         mVideoView.setVideoURI(Uri.parse("android.resource://" + v.getContext().getPackageName() +"/"+R.raw.videoplayback));
         mVideoView.start();
+        mVideoView.setContentDescription(getString(R.string.home_video_descr));
 
         mMediaController = (UniversalMediaController) v.findViewById(R.id.media_controller);
         mVideoView.setMediaController(mMediaController);
