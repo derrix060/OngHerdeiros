@@ -90,7 +90,7 @@ public class EventsFragment extends Fragment {
         Calendar myCal = Calendar.getInstance();
 
         myCal.set(Calendar.YEAR, 2017);
-        myCal.set(Calendar.MONTH, 4);
+        myCal.set(Calendar.MONTH, 5);
         myCal.set(Calendar.DAY_OF_MONTH, 20);
         Date dt = myCal.getTime();
         Calendar cal = Calendar.getInstance();
@@ -101,7 +101,7 @@ public class EventsFragment extends Fragment {
         caldroidFragment.setBackgroundDrawableForDate(green, dt);
 
         myCal.set(Calendar.YEAR, 2017);
-        myCal.set(Calendar.MONTH, 4);
+        myCal.set(Calendar.MONTH, 5);
         myCal.set(Calendar.DAY_OF_MONTH, 21);
         dt = myCal.getTime();
         cal = Calendar.getInstance();
