@@ -13,15 +13,16 @@ public class Event {
     private String time;
     private String place;
     private String description;
-    private Bitmap img_src;
+    private Bitmap image;
+    private String image_src;
 
-    public Event(String title, String date, String time, String place, String description, Bitmap img_src) {
+    public Event(String title, String date, String time, String place, String description, String image_src) {
         this.title = title;
         this.date = date;
         this.time = time;
         this.place = place;
         this.description = description;
-        this.img_src = img_src;
+        this.image_src = image_src;
     }
 
     public String getTitle() {
@@ -37,7 +38,7 @@ public class Event {
     }
 
     public Bitmap getImg_src(){
-        return img_src;
+        return image;
     }
 
     public void setDate(String date) {
@@ -69,6 +70,6 @@ public class Event {
     }
 
     public void setImg_src(Bitmap img_src) {
-        this.img_src = img_src;
+        this.image = img_src;
     }
 }
