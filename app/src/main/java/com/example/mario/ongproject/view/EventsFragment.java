@@ -143,7 +143,21 @@ public class EventsFragment extends Fragment {
             catch (JSONException e){
                 e.printStackTrace();
             }
+
             return events;
+        }
+
+        protected void onPostExecute(ArrayList<Event> events){
+            progressBar.setVisibility(View.INVISIBLE);
+            if (events.size() == 0){
+                Snackbar.make(rootView, getString(R.string.dont_find_event), Snackbar.LENGTH_LONG).show();
+            }
+            else{
+                eventos = events;
+                adapter = new EventItemAdapter(eventos);
+                mRV.setAdapter(adapter);
+                mRV.smoothScrollToPosition(0);
+            }
         }
     }
 

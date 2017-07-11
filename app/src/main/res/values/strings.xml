@@ -61,6 +61,7 @@
     <string name="read_error">Read error!</string>
     <string name="connect_error">Connection error!</string>
     <string name="no_detach_items">Sorry, there are no items wanted!</string>
+    <string name="dont_find_event">Don\'t find any event!</string>
 
 </resources>
 
