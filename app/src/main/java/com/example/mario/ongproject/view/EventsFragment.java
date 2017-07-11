@@ -1,115 +1,150 @@
 package com.example.mario.ongproject.view;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.example.mario.ongproject.R;
-import com.roomorama.caldroid.CaldroidFragment;
-import com.roomorama.caldroid.CaldroidListener;
+import com.example.mario.ongproject.controller.EventItemAdapter;
+import com.example.mario.ongproject.model.Event;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 
 /**
- * Created by mario on 05/05/17.
+ * Created by mario on 11/07/2017.
  */
 
 public class EventsFragment extends Fragment {
 
-    ArrayList<Calendar> dtEventos;
-    ArrayList<String> descrEventos;
+    private ArrayList<Event> eventos;
+    private RecyclerView mRV;
+    private EventItemAdapter adapter;
+    private ProgressBar progressBar;
 
-    CaldroidFragment caldroidFragment; // Source: https://github.com/roomorama/Caldroid
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.events_view, container, false);
+        View v = inflater.inflate(R.layout.events_view_with_calendar, container, false);
 
-        // Tuned calendar
-        caldroidFragment = new CaldroidFragment();
+        progressBar = (ProgressBar) v.findViewById(R.id.event_progressBar);
 
-        // Populate calendar
-        populateCalendar();
-
-        // Get actual date
-        Bundle args = new Bundle();
-        Calendar cal = Calendar.getInstance();
-        args.putInt(CaldroidFragment.MONTH, cal.get(Calendar.MONTH) + 1);
-        args.putInt(CaldroidFragment.YEAR, cal.get(Calendar.YEAR));
-        caldroidFragment.setArguments(args);
-
-        // Show calendar on screen
-        FragmentTransaction t = getFragmentManager().beginTransaction();
-        t.replace(R.id.customCalendar, caldroidFragment);
-        t.commit();
+        mRV = (RecyclerView) v.findViewById(R.id.events_rv);
+        // improve performance when you know that changes
+        // in content do not change the layout size of the RecyclerView
+        mRV.setHasFixedSize(true);
 
 
-        // To show event on click
-        final CaldroidListener listener = new CaldroidListener(){
-            @Override
-            public void onSelectDate(Date date, View view) {
-                int idx = idxEventDate(date);
-                if(idx != -1)
-                    Snackbar.make(view, descrEventos.get(idx), Snackbar.LENGTH_SHORT).show();
-            }
+        // use a linear layout manager
+        mRV.setLayoutManager(new LinearLayoutManager(v.getContext()));
 
-        };
-        caldroidFragment.setCaldroidListener(listener);
+        // Custom adapter
+        adapter = new EventItemAdapter(eventos);
+        mRV.setAdapter(adapter);
+
+        // Populate
+        new GetEventsTask(v).execute();
+
 
         return v;
     }
 
-    private int idxEventDate(Date dt){
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(dt);
 
-        for(int i = 0; i<dtEventos.size(); i++){
-            Calendar c = dtEventos.get(i);
-            if (c.get(Calendar.DAY_OF_YEAR) == cal.get(Calendar.DAY_OF_YEAR)
-                    && c.get(Calendar.YEAR) == cal.get(Calendar.YEAR))
-                return i;
+    private class GetEventsTask extends AsyncTask<Void, Void, ArrayList<Event>> {
+
+        View rootView;
+
+        GetEventsTask(View rootView){
+            this.rootView = rootView;
         }
 
-        return -1;
+        protected ArrayList<Event> doInBackground(Void... v){
+
+            try {
+                URL url = new URL("http://flaskappteste.azurewebsites.net/api/herdeiros/events/all");
+
+                HttpURLConnection connection = null;
+                try {
+                    connection = (HttpURLConnection) url.openConnection();
+                    int response = connection.getResponseCode();
+                    if (response == HttpURLConnection.HTTP_OK) {
+                        StringBuilder builder = new StringBuilder();
+                        try (BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+                            String line;
+                            while ((line = reader.readLine()) != null) {
+                                builder.append(line);
+                            }
+                        } catch (IOException e) {
+                            Snackbar.make(rootView, getString(R.string.read_error), Snackbar.LENGTH_LONG).show();
+                            e.printStackTrace();
+                        }
+                        return convertJSONToArrayList(new JSONObject(builder.toString()));
+                    }
+                } catch (Exception e) {
+                    Snackbar.make(rootView, getString(R.string.connect_error), Snackbar.LENGTH_LONG).show();
+                    e.printStackTrace();
+                } finally {
+                    if (connection != null) {
+                        connection.disconnect();
+                    }
+                }
+                return new ArrayList<>();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+
+            return new ArrayList<>();
+
+        }
+
+        public ArrayList<Event> convertJSONToArrayList (JSONObject moviesJSON){
+
+            ArrayList<Event> events = new ArrayList<>();
+
+            try{
+                JSONArray movies = moviesJSON.getJSONArray("events");
+                for (int i = 0; i < movies.length(); i++){
+                    JSONObject event = movies.getJSONObject(i);
+
+                    String date = event.getString("date");
+                    String description = event.getString("description");
+                    String place = event.getString("place");
+                    String time = event.getString("time");
+                    String title = event.getString("title");
+
+                    String image_src = "";
+                    if (!event.isNull("image_src") && event.getJSONObject("image_src") != JSONObject.NULL)
+                        image_src = event.getString("src");
+
+                    //String title, String date, String time, String place, String description, Bitmap img_src
+                    events.add(new Event(title, date, time, place, description, image_src));
+                }
+            }
+            catch (JSONException e){
+                e.printStackTrace();
+            }
+            return events;
+        }
     }
 
-    public void populateCalendar(){
-        dtEventos = new ArrayList<>();
-        descrEventos = new ArrayList<>();
-        ColorDrawable green = new ColorDrawable(Color.GRAY);
-        Calendar myCal = Calendar.getInstance();
-
-        myCal.set(Calendar.YEAR, 2017);
-        myCal.set(Calendar.MONTH, 5);
-        myCal.set(Calendar.DAY_OF_MONTH, 20);
-        Date dt = myCal.getTime();
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(dt);
-        dtEventos.add(cal);
-        descrEventos.add(new String(getString(R.string.events_first_event)));
-
-        caldroidFragment.setBackgroundDrawableForDate(green, dt);
-
-        myCal.set(Calendar.YEAR, 2017);
-        myCal.set(Calendar.MONTH, 5);
-        myCal.set(Calendar.DAY_OF_MONTH, 21);
-        dt = myCal.getTime();
-        cal = Calendar.getInstance();
-        cal.setTime(dt);
-        dtEventos.add(cal);
-        descrEventos.add(new String(getString(R.string.events_seccond_event)));
-
-        caldroidFragment.setBackgroundDrawableForDate(green, dt);
-        caldroidFragment.refreshView();
-    }
 }
