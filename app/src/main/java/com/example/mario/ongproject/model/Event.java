@@ -37,8 +37,8 @@ public class Event {
         return date;
     }
 
-    public Bitmap getImg_src(){
-        return image;
+    public String getImg_src(){
+        return image_src;
     }
 
     public void setDate(String date) {
