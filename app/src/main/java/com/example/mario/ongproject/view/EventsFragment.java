@@ -22,11 +22,9 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 
 /**
@@ -35,7 +33,7 @@ import java.util.ArrayList;
 
 public class EventsFragment extends Fragment {
 
-    private ArrayList<Event> eventos;
+    private ArrayList<Event> events = new ArrayList<>();
     private RecyclerView mRV;
     private EventItemAdapter adapter;
     private ProgressBar progressBar;
@@ -45,7 +43,7 @@ public class EventsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.events_view_with_calendar, container, false);
+        View v = inflater.inflate(R.layout.events_view, container, false);
 
         progressBar = (ProgressBar) v.findViewById(R.id.event_progressBar);
 
@@ -59,7 +57,7 @@ public class EventsFragment extends Fragment {
         mRV.setLayoutManager(new LinearLayoutManager(v.getContext()));
 
         // Custom adapter
-        adapter = new EventItemAdapter(eventos);
+        adapter = new EventItemAdapter(events);
         mRV.setAdapter(adapter);
 
         // Populate
@@ -133,8 +131,8 @@ public class EventsFragment extends Fragment {
                     String title = event.getString("title");
 
                     String image_src = "";
-                    if (!event.isNull("image_src") && event.getJSONObject("image_src") != JSONObject.NULL)
-                        image_src = event.getString("src");
+                    if (!event.isNull("image_src"))
+                        image_src = event.getString("image_src");
 
                     //String title, String date, String time, String place, String description, Bitmap img_src
                     events.add(new Event(title, date, time, place, description, image_src));
@@ -153,8 +151,8 @@ public class EventsFragment extends Fragment {
                 Snackbar.make(rootView, getString(R.string.dont_find_event), Snackbar.LENGTH_LONG).show();
             }
             else{
-                eventos = events;
-                adapter = new EventItemAdapter(eventos);
+                EventsFragment.this.events = events;
+                adapter = new EventItemAdapter(EventsFragment.this.events);
                 mRV.setAdapter(adapter);
                 mRV.smoothScrollToPosition(0);
             }
