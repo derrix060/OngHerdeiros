@@ -34,7 +34,7 @@ import java.util.ArrayList;
 public class DetachFragment extends Fragment {
 
     private static final String TAG = "DetachFragment";
-    private ArrayList<DonateItem> myItens = new ArrayList<>();
+    private ArrayList<DonateItem> myItems = new ArrayList<>();
     private DetachItemAdapter adapter;
     private RecyclerView mRecyclerView;
     private ProgressBar progressBar;
@@ -118,14 +118,14 @@ public class DetachFragment extends Fragment {
             if (itens.size() == 0)
                 Snackbar.make(getView(), getString(R.string.no_detach_items),Snackbar.LENGTH_LONG).show();
             else {
-                myItens = itens;
+                myItems = itens;
             }
 
             // Remove progressBar
             progressBar.setVisibility(View.INVISIBLE);
 
             // Custom adapter
-            adapter = new DetachItemAdapter(myItens);
+            adapter = new DetachItemAdapter(myItems);
             mRecyclerView.setAdapter(adapter);
 
         }
