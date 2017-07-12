@@ -38,7 +38,7 @@ public class EventItemAdapter extends RecyclerView.Adapter<EventItemAdapter.Item
         public ItemViewHolder(final View itemView) {
             super(itemView);
 
-            img = (ImageView)itemView.findViewById(R.id.event_img_item);
+            img = (ImageView) itemView.findViewById(R.id.event_img_item);
             title = (TextView)itemView.findViewById(R.id.txt_event_title);
             date = (TextView) itemView.findViewById(R.id.txt_event_date);
             time = (TextView) itemView.findViewById(R.id.txt_event_time);
@@ -53,15 +53,14 @@ public class EventItemAdapter extends RecyclerView.Adapter<EventItemAdapter.Item
     @Override
     public EventItemAdapter.ItemViewHolder onCreateViewHolder(ViewGroup viewGroup, int position) {
         View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.detach_list_item, viewGroup, false);
+                .inflate(R.layout.event_list_item, viewGroup, false);
 
-        ItemViewHolder ivh = new ItemViewHolder(v);
-        return ivh;
+        return new ItemViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(ItemViewHolder ivh, int position) {
-        Event item = myItems.get(position);
+        final Event item = myItems.get(position);
         ivh.title.setText(item.getTitle());
         ivh.date.setText(item.getDate());
         ivh.time.setText(item.getTime());
