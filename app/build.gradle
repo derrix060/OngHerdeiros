@@ -36,4 +36,8 @@ dependencies {
 
     // Tuned Video View
     compile 'com.linsea:universalvideoview:1.1.0@aar'
+
+    // Tuned TextView  to use Justified
+    compile 'com.uncopt:android.justified:1.0'
+
 }
