@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+            <TextView
+                android:id="@+id/event_dialog_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:text="Inaugura\u00e7\u00e3o do Centro de Refer\u00eancia da Mulher do Cap\u00e3o Redondo."
+                android:layout_margin="8dp"
+                android:textAlignment="center" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Data"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/event_dialog_date_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="03/06/2017 - 14:00"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginRight="16dp"
+                android:text="Local"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/event_dialog_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="R. Bandeira Paulista, 123"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Descrição"
+                android:textStyle="bold" />
+
+
+            <com.uncopt.android.widget.text.justify.JustifiedTextView
+                android:id="@+id/event_dialog_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="Nam non velit sit amet ex hendrerit ornare. Aenean ac augue eu est eleifend ultrices porttitor non justo. Nullam pretium mi risus, quis volutpat odio tempus non. Nulla tincidunt faucibus eros vel volutpat. Maecenas sagittis libero non mi venenatis placerat. Praesent venenatis enim luctus, dignissim nisi et, eleifend mauris. Vestibulum hendrerit malesuada mi eleifend pretium. Duis bibendum, nisl id condimentum rhoncus, orci augue faucibus metus, ut cursus purus libero in odio. Mauris vitae dolor feugiat, placerat lacus id, scelerisque tellus. Suspendisse quis mauris eget ante vestibulum elementum. Nam dignissim lorem ut ligula lobortis congue. Maecenas a lacus et orci lobortis."
+                android:textAlignment="textStart" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>
