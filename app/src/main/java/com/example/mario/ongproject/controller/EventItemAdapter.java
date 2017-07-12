@@ -1,8 +1,11 @@
 package com.example.mario.ongproject.controller;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.mario.ongproject.R;
 import com.example.mario.ongproject.model.Event;
+import com.example.mario.ongproject.view.EventDetailActivity;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -34,6 +38,7 @@ public class EventItemAdapter extends RecyclerView.Adapter<EventItemAdapter.Item
         ImageView img;
         TextView date;
         TextView time;
+        CardView cardView;
 
         public ItemViewHolder(final View itemView) {
             super(itemView);
@@ -42,6 +47,7 @@ public class EventItemAdapter extends RecyclerView.Adapter<EventItemAdapter.Item
             title = (TextView)itemView.findViewById(R.id.txt_event_title);
             date = (TextView) itemView.findViewById(R.id.txt_event_date);
             time = (TextView) itemView.findViewById(R.id.txt_event_time);
+            cardView = (CardView) itemView.findViewById(R.id.event_item_card);
         }
     }
 
@@ -69,6 +75,24 @@ public class EventItemAdapter extends RecyclerView.Adapter<EventItemAdapter.Item
             new LoadImageTask(ivh.img).execute(item.getImg_src());
         }
 
+        ivh.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openEventDetails(v.getContext(), item);
+            }
+        });
+
+    }
+
+    public void openEventDetails(Context context, Event event){
+        Intent intent = new Intent(context, EventDetailActivity.class);
+        intent.putExtra("EVENT_TITLE", event.getTitle());
+        intent.putExtra("EVENT_DATE", event.getDate());
+        intent.putExtra("EVENT_TIME", event.getTime());
+        intent.putExtra("EVENT_PLACE", event.getPlace());
+        intent.putExtra("EVENT_DESCRIPTION", event.getDescription());
+
+        context.startActivity(intent);
     }
 
     @Override
