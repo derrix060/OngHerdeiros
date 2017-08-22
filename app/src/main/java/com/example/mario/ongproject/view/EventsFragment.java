@@ -79,7 +79,7 @@ public class EventsFragment extends Fragment {
         protected ArrayList<Event> doInBackground(Void... v){
 
             try {
-                URL url = new URL("http://flaskappteste.azurewebsites.net/api/herdeiros/events/all");
+                URL url = new URL("https://dry-anchorage-70819.herokuapp.com/api/eventos/");
 
                 HttpURLConnection connection = null;
                 try {
@@ -96,7 +96,7 @@ public class EventsFragment extends Fragment {
                             Snackbar.make(rootView, getString(R.string.read_error), Snackbar.LENGTH_LONG).show();
                             e.printStackTrace();
                         }
-                        return convertJSONToArrayList(new JSONObject(builder.toString()));
+                        return convertJSONToArrayList(new JSONArray(builder.toString()));
                     }
                 } catch (Exception e) {
                     Snackbar.make(rootView, getString(R.string.connect_error), Snackbar.LENGTH_LONG).show();
@@ -115,27 +115,25 @@ public class EventsFragment extends Fragment {
 
         }
 
-        public ArrayList<Event> convertJSONToArrayList (JSONObject moviesJSON){
+        public ArrayList<Event> convertJSONToArrayList (JSONArray eventsJSON){
 
             ArrayList<Event> events = new ArrayList<>();
 
             try{
-                JSONArray movies = moviesJSON.getJSONArray("events");
-                for (int i = 0; i < movies.length(); i++){
-                    JSONObject event = movies.getJSONObject(i);
+                for (int i = 0; i < eventsJSON.length(); i++){
+                    JSONObject event = eventsJSON.getJSONObject(i);
 
-                    String date = event.getString("date");
-                    String description = event.getString("description");
-                    String place = event.getString("place");
-                    String time = event.getString("time");
-                    String title = event.getString("title");
+                    String date = event.getString("date_date");
+                    String description = event.getString("description_text");
+                    String place = event.getString("local_text");
+                    String title = event.getString("titulo_text");
 
                     String image_src = "";
-                    if (!event.isNull("image_src"))
-                        image_src = event.getString("image_src");
+                    if (!event.isNull("image_src_text"))
+                        image_src = event.getString("image_src_text");
 
                     //String title, String date, String time, String place, String description, Bitmap img_src
-                    events.add(new Event(title, date, time, place, description, image_src));
+                    events.add(new Event(title, date, place, description, image_src));
                 }
             }
             catch (JSONException e){

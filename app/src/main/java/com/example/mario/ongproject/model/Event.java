@@ -16,10 +16,10 @@ public class Event {
     private Bitmap image;
     private String image_src;
 
-    public Event(String title, String date, String time, String place, String description, String image_src) {
+    public Event(String title, String date, String place, String description, String image_src) {
         this.title = title;
-        this.date = date;
-        this.time = time;
+        this.date = date.substring(0,10);
+        this.time = date.substring(13);
         this.place = place;
         this.description = description;
         this.image_src = image_src;
