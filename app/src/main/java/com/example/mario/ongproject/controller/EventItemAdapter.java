@@ -5,11 +5,13 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,6 +23,8 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+
+import static android.support.v4.content.ContextCompat.startActivity;
 
 /**
  * Created by mario on 10/07/2017.
@@ -39,6 +43,7 @@ public class EventItemAdapter extends RecyclerView.Adapter<EventItemAdapter.Item
         TextView date;
         TextView time;
         CardView cardView;
+        Button shareBtn;
 
         public ItemViewHolder(final View itemView) {
             super(itemView);
@@ -48,6 +53,8 @@ public class EventItemAdapter extends RecyclerView.Adapter<EventItemAdapter.Item
             date = (TextView) itemView.findViewById(R.id.txt_event_date);
             time = (TextView) itemView.findViewById(R.id.txt_event_time);
             cardView = (CardView) itemView.findViewById(R.id.event_item_card);
+            shareBtn = (Button) itemView.findViewById(R.id.event_button_share);
+
         }
     }
 
@@ -79,6 +86,24 @@ public class EventItemAdapter extends RecyclerView.Adapter<EventItemAdapter.Item
             @Override
             public void onClick(View v) {
                 openEventDetails(v.getContext(), item);
+            }
+        });
+
+
+        ivh.shareBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String shareBody = String.format(v.getResources().getString(R.string.events_share),
+                        item.getDate(), item.getTime(), item.getTitle(), item.getDescription());
+
+                String sub = v.getResources().getString(R.string.share_subtitle);
+
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, sub);
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+
+                startActivity(v.getContext(), sharingIntent, new Bundle());
             }
         });
 

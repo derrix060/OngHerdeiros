@@ -37,6 +37,13 @@
     <string name="events_available">Upcoming Events</string>
     <string name="events_first_event">05/20/2017 - Pizza Night</string>
     <string name="events_seccond_event">05/22/2017 - Bingo Night</string>
+    <string name="events_share">Hello to everyone, on %1$s at %2$s will happen an super important event\:\n\n
+        \"%3$s\"\n\n
+        Following the description:\n\n
+        %4$s\n
+        \n
+        \n
+        I\'m looking forward to seeing you!</string>
 
 
     <!-- General -->

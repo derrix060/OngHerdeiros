@@ -17,19 +17,12 @@
     <string name="events_available">Proximos eventos</string>
     <string name="events_first_event">20/05/2017 - Noite da pizza</string>
     <string name="events_seccond_event">22/05/2017 - Noite do bingo</string>
-    <string name="home_cuidado">Eles precisam de nossa ajuda!</string>
-    <string name="home_cuidado_sub">e nós temos o necessário para ajudá-los.</string>
     <string name="home_title">Quem somos</string>
-    <string name="home_video_descr">Vídeo sobre os Herdeiros do Futuro</string>
-    <string name="image">imagem</string>
     <string name="microwaves">Microondas</string>
     <string name="refrigerator">Geladeira</string>
-    <string name="send_button_descr">Botão de envio</string>
     <string name="share">Compartilhar</string>
-    <string name="share_message">Olá a todos. Existe uma ONG que precisa de ajuda com %s. Você poderia ajudá-los? Muito obrigado.</string>
-    <string name="share_subtitle">Ajude-nos</string>
-    <string name="title_contact">Apadrinhe</string>
-    <string name="title_donate">Doe</string>
+    <string name="share_subtitle">Nos ajude</string>
+    <string name="title_donate">Doar</string>
     <string name="title_events">Eventos</string>
     <string name="title_help">Desapegue</string>
     <string name="title_home">Inicio</string>
@@ -37,5 +30,14 @@
     <string name="donate_title">SEJA UM REALIZADOR DE SONHOS</string>
     <string name="donate_subtitle">Ajude nossas crianças doando.</string>
     <string name="connect_error">Erro de Conexão!</string>
+    <string name="events_share">Olá a todos, no dia %1$s às %2$s ocorrerá um evento super importante:\\n\\n \\\"%3$s\\\" \\n\\n Segue a descrição\\: \\n\\n\\n %4$s \\n\\n\\n Conto com a sua presença!</string>
+    <string name="no_detach_items"></string>
+    <string name="home_cuidado">Eles precisam do nosso cuidado!</string>
+    <string name="home_cuidado_sub">e nos temos as ferramentas adequadas.</string>
+    <string name="home_video_descr">Vídeo sobre os Herdeiros do Futuro</string>
+    <string name="image">imagem</string>
     <string name="read_error">Erro de leitura!</string>
+    <string name="send_button_descr">Botão de envio.</string>
+    <string name="title_contact">Apadrinhar</string>
+    <string name="share_message">Olá a todos. Existe uma ONG que precisa de um %s. Vocês poderiam ajudá-la fazendo a doação? Muito obrigado.</string>
 </resources>
