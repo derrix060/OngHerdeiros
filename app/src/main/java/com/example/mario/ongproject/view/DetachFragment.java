@@ -82,7 +82,7 @@ public class DetachFragment extends Fragment {
         protected ArrayList<DonateItem> doInBackground(Void... movies) {
             HttpURLConnection connection = null;
             try {
-                URL url = new URL("http://flaskappteste.azurewebsites.net/api/herdeiros/itens/all");
+                URL url = new URL("https://dry-anchorage-70819.herokuapp.com/api/donateitens/");
 
 
                 connection = (HttpURLConnection) url.openConnection();
@@ -94,7 +94,7 @@ public class DetachFragment extends Fragment {
                         while ((line = reader.readLine()) != null) {
                             builder.append(line);
                         }
-                        return convertJSONToArrayList(new JSONObject(builder.toString()));
+                        return convertJSONToArrayList(new JSONArray(builder.toString()));
                     } catch (IOException e) {
                         Snackbar.make(getView(), getString(R.string.read_error), Snackbar.LENGTH_LONG).show();
                         e.printStackTrace();
@@ -130,15 +130,14 @@ public class DetachFragment extends Fragment {
 
         }
 
-        public ArrayList<DonateItem> convertJSONToArrayList (JSONObject moviesJSON){
+        public ArrayList<DonateItem> convertJSONToArrayList (JSONArray items){
 
             ArrayList<DonateItem> movieList = new ArrayList<>();
 
             try{
-                JSONArray items = moviesJSON.getJSONArray("itens");
                 for (int i = 0; i < items.length(); i++){
                     JSONObject item = items.getJSONObject(i);
-                    String name = item.getString("name");
+                    String name = item.getString("name_text");
                     int imagePath;
                     String title;
 
