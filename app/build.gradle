@@ -32,14 +32,13 @@ dependencies {
     compile 'com.sun.mail:android-mail:1.5.5'
     compile 'com.sun.mail:android-activation:1.5.5'
 
-    // Tuned calendar
-    compile 'com.roomorama:caldroid:3.0.1'
-
     // Tuned Video View
     compile 'com.linsea:universalvideoview:1.1.0@aar'
 
     // Tuned TextView  to use Justified
     compile 'com.uncopt:android.justified:1.0'
+
+    // Use Kotlin
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
 }
