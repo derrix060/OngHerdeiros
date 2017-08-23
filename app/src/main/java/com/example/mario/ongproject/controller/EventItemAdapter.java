@@ -2,9 +2,6 @@ package com.example.mario.ongproject.controller;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -19,9 +16,6 @@ import com.example.mario.ongproject.R;
 import com.example.mario.ongproject.model.Event;
 import com.example.mario.ongproject.view.EventDetailActivity;
 
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 
 import static android.support.v4.content.ContextCompat.startActivity;
@@ -126,40 +120,6 @@ public class EventItemAdapter extends RecyclerView.Adapter<EventItemAdapter.Item
         }
 
 
-    private class LoadImageTask extends AsyncTask<String,Void,Bitmap> {
-        private ImageView imageView;
 
-        public LoadImageTask(ImageView imageView) {
-            this.imageView = imageView;
-        }
-
-        @Override
-        protected Bitmap doInBackground(String... params) {
-            Bitmap bitmap = null;
-
-            HttpURLConnection connection = null;
-
-            try {
-                URL url = new URL(params[0]);
-                connection = (HttpURLConnection) url.openConnection();
-                try (InputStream inputStream = connection.getInputStream()) {
-                    bitmap = BitmapFactory.decodeStream(inputStream);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                connection.disconnect();
-            }
-
-            return bitmap;
-        }
-
-        protected void onPostExecute(Bitmap bitmap) {
-            imageView.setImageBitmap(bitmap);
-        }
-    }
 
 }

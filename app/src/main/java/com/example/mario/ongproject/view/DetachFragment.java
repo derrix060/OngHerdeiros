@@ -138,41 +138,9 @@ public class DetachFragment extends Fragment {
                 for (int i = 0; i < items.length(); i++){
                     JSONObject item = items.getJSONObject(i);
                     String name = item.getString("name_text");
-                    int imagePath;
-                    String title;
+                    String imagePath = item.getString("image_src_text");
 
-                    switch (name){
-                        case "Carro":
-                            imagePath = R.drawable.car;
-                            title = getString(R.string.car);
-                            break;
-
-                        case "Camera":
-                            imagePath = R.drawable.camera;
-                            title = getString(R.string.camera);
-                            break;
-
-                        case "Computador":
-                            imagePath = R.drawable.computer;
-                            title = getString(R.string.computer);
-                            break;
-
-                        case "Geladeira":
-                            imagePath = R.drawable.refrigerator;
-                            title = getString(R.string.refrigerator);
-                            break;
-
-                        case "Microondas":
-                            imagePath = R.drawable.microwaves;
-                            title = getString(R.string.microwaves);
-                            break;
-
-                        default:
-                            imagePath = R.mipmap.blank;
-                            title = name;
-                            break;
-                    }
-                    movieList.add(new DonateItem(imagePath, title));
+                    movieList.add(new DonateItem(imagePath, name));
 
                 }
             }

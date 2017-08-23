@@ -12,8 +12,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.mario.ongproject.model.DonateItem;
 import com.example.mario.ongproject.R;
+import com.example.mario.ongproject.model.DonateItem;
 
 import java.util.ArrayList;
 
@@ -90,10 +90,12 @@ public class DetachItemAdapter extends RecyclerView.Adapter<DetachItemAdapter.It
     }
 
     @Override
-    public void onBindViewHolder(ItemViewHolder itemViewHolder, int position) {
+    public void onBindViewHolder(ItemViewHolder ivh, int position) {
         DonateItem item = myItems.get(position);
-        itemViewHolder.title.setText(item.title);
-        itemViewHolder.img.setImageResource(item.imagePath);
+        ivh.title.setText(item.title);
+        if (!item.imagePath.isEmpty()){
+            new LoadImageTask(ivh.img).execute(item.imagePath);
+        }
     }
 
     @Override

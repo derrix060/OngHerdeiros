@@ -6,10 +6,10 @@ package com.example.mario.ongproject.model;
 
 public class DonateItem {
 
-    public int imagePath;
+    public String imagePath;
     public final String title;
 
-    public DonateItem(int imagePath, String title) {
+    public DonateItem(String imagePath, String title) {
         this.imagePath = imagePath;
         this.title = title;
     }
