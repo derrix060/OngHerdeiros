@@ -40,4 +40,5 @@
     <string name="send_button_descr">Botão de envio.</string>
     <string name="title_contact">Apadrinhar</string>
     <string name="share_message">Olá a todos. Existe uma ONG que precisa de um %s. Vocês poderiam ajudá-la fazendo a doação? Muito obrigado.</string>
+    <string name="sending">Enviando...</string>
 </resources>

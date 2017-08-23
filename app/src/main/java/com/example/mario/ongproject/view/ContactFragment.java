@@ -1,6 +1,5 @@
 package com.example.mario.ongproject.view;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,11 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.mario.ongproject.model.Mail;
 import com.example.mario.ongproject.R;
-
-import javax.mail.AuthenticationFailedException;
-import javax.mail.MessagingException;
+import com.example.mario.ongproject.controller.SendEmailAsyncTask;
+import com.example.mario.ongproject.model.Mail;
 
 /**
  * Created by mario on 05/05/17.
@@ -68,14 +65,15 @@ public class ContactFragment  extends Fragment {
 
     private void sendMessage() {
 
-        SendEmailAsyncTask email = new SendEmailAsyncTask();
-        email.activity = this;
-        email.m = new Mail();
-        email.m.setBody(createMessage());
+        Mail m = new Mail();
+        m.setBody(createMessage());
+        Snackbar.make(getView(), getString(R.string.sending), Snackbar.LENGTH_LONG)
+                .show();
+        SendEmailAsyncTask email = new SendEmailAsyncTask(this, m);
         email.execute();
     }
 
-    protected void displayMessage(String message){
+    public void displayMessage(String message){
         // progressBar.setVisibility(View.GONE);
         Snackbar.make(getView(), message, Snackbar.LENGTH_SHORT)
                 .setAction("Action", null).show();
@@ -83,34 +81,4 @@ public class ContactFragment  extends Fragment {
 
 }
 
-class SendEmailAsyncTask extends AsyncTask<Void, Void, Boolean> {
-    Mail m;
-    ContactFragment activity;
 
-    public SendEmailAsyncTask() {}
-
-    @Override
-    protected Boolean doInBackground(Void... params) {
-        try {
-            if (m.send()) {
-                activity.displayMessage("Email sent.");
-            } else {
-                activity.displayMessage("Email failed to send.");
-            }
-
-            return true;
-        } catch (AuthenticationFailedException e) {
-            e.printStackTrace();
-            activity.displayMessage("Authentication failed.");
-            return false;
-        } catch (MessagingException e) {
-            e.printStackTrace();
-            activity.displayMessage("Email failed to send.");
-            return false;
-        } catch (Exception e) {
-            e.printStackTrace();
-            activity.displayMessage("Unexpected error occured.");
-            return false;
-        }
-    }
-}
