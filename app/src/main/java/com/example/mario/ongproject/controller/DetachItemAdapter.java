@@ -92,9 +92,9 @@ public class DetachItemAdapter extends RecyclerView.Adapter<DetachItemAdapter.It
     @Override
     public void onBindViewHolder(ItemViewHolder ivh, int position) {
         DonateItem item = myItems.get(position);
-        ivh.title.setText(item.title);
-        if (!item.imagePath.isEmpty()){
-            new LoadImageTask(ivh.img).execute(item.imagePath);
+        ivh.title.setText(item.getTitle());
+        if (!item.getImagePath().isEmpty()){
+            new LoadImageTask(ivh.img).execute(item.getImagePath());
         }
     }
 
