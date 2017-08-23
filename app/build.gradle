@@ -40,5 +40,9 @@ dependencies {
 
     // Tuned TextView  to use Justified
     compile 'com.uncopt:android.justified:1.0'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
+}
+repositories {
+    mavenCentral()
 }
