@@ -30,8 +30,8 @@
     <string name="donate_title">SEJA UM REALIZADOR DE SONHOS</string>
     <string name="donate_subtitle">Ajude nossas crianças doando.</string>
     <string name="connect_error">Erro de Conexão!</string>
-    <string name="events_share">Olá a todos, no dia %1$s às %2$s ocorrerá um evento super importante:\n\n \"%3$s\" \n\n Segue a descrição\: \n\n\n %4$s \n\n\n Conto com a sua presença!</string>
-    <string name="no_detach_items"></string>
+    <string name="events_share">Olá a todos, no dia %1$s às %2$s ocorrerá um evento super importante:\n\n \"%3$s\" \n\n Segue a descrição\: \n\n\n %4$s \n\n\nSaiba mais em\:http\:\ /\/www.herdeirosdofuturo.org.br\n\n\n Conto com a sua presença!</string>
+    <string name="no_detach_items">Não há itens.</string>
     <string name="home_cuidado">Eles precisam do nosso cuidado!</string>
     <string name="home_cuidado_sub">e nos temos as ferramentas adequadas.</string>
     <string name="home_video_descr">Vídeo sobre os Herdeiros do Futuro</string>
@@ -39,6 +39,7 @@
     <string name="read_error">Erro de leitura!</string>
     <string name="send_button_descr">Botão de envio.</string>
     <string name="title_contact">Apadrinhar</string>
-    <string name="share_message">Olá a todos. Existe uma ONG que precisa de um %s. Vocês poderiam ajudá-la fazendo a doação? Muito obrigado.</string>
+    <string name="share_message">Olá a todos. Existe uma ONG que precisa de um %s. Vocês poderiam ajudá-la fazendo a doação?\n\nSegue o link\: http\:\/\/www.herdeirosdofuturo.org.br \n\nMuito obrigado.</string>
     <string name="sending">Enviando...</string>
+    <string name="dont_find_event">Não foi encontrado nenhum evento</string>
 </resources>

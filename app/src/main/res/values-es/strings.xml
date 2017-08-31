@@ -39,4 +39,7 @@
     <string name="connect_error">!Error de conexión!</string>
     <string name="read_error">¡Error de lectura!</string>
     <string name="sending">Enviando...</string>
+    <string name="dont_find_event">No se ha encontrado ningún evento</string>
+    <string name="events_share">Hola</string>
+    <string name="no_detach_items">hmm</string>
 </resources>
